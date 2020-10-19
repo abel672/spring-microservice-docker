@@ -4,15 +4,14 @@ import com.example.ec.domain.Tour;
 import com.example.ec.domain.TourRating;
 import com.example.ec.repo.TourRatingRepository;
 import com.example.ec.repo.TourRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.OptionalDouble;
+import java.util.*;
 
 /**
  * Tour Rating Service
@@ -21,6 +20,7 @@ import java.util.OptionalDouble;
  */
 @Service
 public class TourRatingService {
+    private static Logger LOGGER = LoggerFactory.getLogger(TourRatingService.class);
     private TourRatingRepository tourRatingRepository;
     private TourRepository tourRepository;
 
@@ -150,6 +150,7 @@ public class TourRatingService {
      * @param customers
      */
     public void rateMany(int tourId,  int score, Integer [] customers) {
+        LOGGER.info("Rate tour {} by customers {}", tourId, Arrays.asList(customers));
         tourRepository.findById(tourId).ifPresent(tour -> {
             for (Integer c : customers) {
                 tourRatingRepository.save(new TourRating(tour, c, score));
