@@ -58,7 +58,7 @@ public class JwtRequestHelper {
      * @param withRoleId role identifier
      * @return Http Headers for Content-Type and Authorization
      */
-    private static HttpHeaders forUser(String username, String withRoleId){
+    public static HttpHeaders forUser(String username, String withRoleId){
         HttpHeaders headers = new HttpHeaders();
         Role r = new Role();
         r.setRoleName(withRoleId);
