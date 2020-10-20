@@ -20,6 +20,8 @@ import static org.junit.Assert.assertThat;
 public class UserServiceIntegrationTest {
     @Autowired
     private UserService service;
+
+    // here we test that is working properly
     @Test
     public void signup() {
         Optional<User> user = service.signup("dummyUsername", "dummypassword", "john", "doe");

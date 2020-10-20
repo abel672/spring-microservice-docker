@@ -23,6 +23,7 @@ public class UserService {
 
     private RoleRepository roleRepository;
 
+//    this spring.security module is used to encode and decode passwords
     private PasswordEncoder passwordEncoder;
 
     @Autowired
@@ -38,6 +39,7 @@ public class UserService {
         return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
     }
 
+    // we use it in this method to signup the user in the system
     public Optional<User> signup(String username, String password, String firstName, String lastName) {
         if (!userRepository.findByUsername(username).isPresent()) {
             Optional<Role> role = roleRepository.findByRoleName("ROLE_CSR");
