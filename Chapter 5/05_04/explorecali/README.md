@@ -67,6 +67,7 @@ or
 ``
 java  -Dspring.profiles.active=mysql -jar target/explorecali-3.0.0-SNAPSHOT.jar
 ``
+## All here
 #### Dockerize Explore California
 ##### Build jar, image, set default profile
 ``

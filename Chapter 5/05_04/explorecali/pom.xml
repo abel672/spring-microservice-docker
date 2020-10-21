@@ -22,6 +22,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>13</java.version>
+<!--		profile variable-->
 		<ec-profile>default</ec-profile>
 	</properties>
 
@@ -113,6 +114,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+<!--			Spotify plugin, to remove dockerFile from our project-->
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
