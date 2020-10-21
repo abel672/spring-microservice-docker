@@ -3,7 +3,7 @@
 by, Mary Ellen Bowman, @MEllenBowman
 
 
-
+## MySQL Docker image
 Final Product requires External MySql Database.
 Install Docker For Mac/Windows/Linux
 #### Docker Commands
@@ -24,7 +24,15 @@ docker ps -a
 ##### Interact with Database (link to ec-mysql container) with mysql client
 ``
 docker run -it --link ec-mysql:mysql --rm mysql sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+
+use <databasename>;
+
+select * from <tablename>;
+
+quit
 ``
+
+
 ##### Stop ec-mysql container
 ``
 docker stop ec-mysql
